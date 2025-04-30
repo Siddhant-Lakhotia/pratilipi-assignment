@@ -1,0 +1,10 @@
+notification-service:
+  build: ./notification-service
+  ports:
+    - "3002:3002"
+  environment:
+    - MONGODB_URI=mongodb://mongodb:27017/notification-service
+    - KAFKA_BROKERS=kafka:9092
+  depends_on:
+    - mongodb
+    - kafka

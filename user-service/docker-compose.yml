@@ -1,0 +1,9 @@
+user-service:
+  build: ./user-service
+  ports:
+    - "3001:3001"
+  environment:
+    - MONGODB_URI=mongodb://mongodb:27017/user-service
+    - JWT_SECRET=your_strong_secret_here
+  depends_on:
+    - mongodb
